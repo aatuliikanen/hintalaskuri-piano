@@ -1,6 +1,8 @@
 # Hintalaskuri muuttofirmalle
 
-Hintalaskuri on nettisivuilla oleva lomake, jonka täyttämällä kävijä saa tietää pianon kuljetuksen hinnan. 
+Hintalaskuri on nettisivuilla oleva lomake, jonka täyttämällä kävijä saa tietää pianon kuljetuksen hinnan.
+
+Tässä on nettisivu, josta pääset katsomaan laskuria: https://aatuliikanen.github.io/hintalaskuri-piano/
 
 ## Miten pianon hinta on laskettu?
 Hinta:
@@ -15,4 +17,5 @@ Hinta:
 Laskuri on kehitysvaiheessa. Tässä muutamia korjattavia ongelmia:
 - Sivu on päivitettävä, jos haluaa laskea hinnan uudelleen
 - Kun hinta tulee esille, sivun taustakuva heilahtaa.
+- Mobiiliversio on huono
 
