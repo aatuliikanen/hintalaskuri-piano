@@ -12,7 +12,7 @@
 		<div class="laskuri">
 			<h2>Laske pianon kuljetukselle hinta</h2>
 				<form id="laskuri-form">
-					<p>Onko sinulla piano vai flyygeli?</p>
+					<p>Valitse piano tai flyygeli</p>
 					<p id="pianotyyppi">
 						<input id="piano" type="radio" name="piano" value="piano">
 						<label class="tyyppi piano" for="piano">Piano</label>
@@ -20,16 +20,16 @@
 						<label class="tyyppi flyygeli" for="flyygeli">Flyygeli</label>
 					</p>
 					<p>
-						<label for="matka">Muuttomatka kilometreinä:</label>
-						<input type="number" id="matka" value="0">
+						<label for="matka">Muuttomatka kilometreinä</label>
+						<input type="number" id="matka" min=1 max=2000>
 					</p>
 					<h4>Mistä?</h4>
 					<p>
-						<label for="kerros1">Kerros:</label>
+						<label for="kerros1">Kerros</label>
 						<input type="number" id="kerros1" value=1 min=1 max=18>				
 					</p>
 					<p>
-						<label for="hissi1">Hissi:</label>
+						<label for="hissi1">Hissi</label>
 							<select id="hissi1">
 								<option>Ei</option>
 								<option>Kyllä</option>
@@ -37,11 +37,11 @@
 					</p>
 					<h4>Minne?</h4>
 					<p>
-						<label for="kerros2">Kerros:</label>
+						<label for="kerros2">Kerros</label>
 						<input type="number" id="kerros2" value=1 min=1 max=18>
 					</p>
 					<p>
-						<label for="hissi2">Hissi:</label>
+						<label for="hissi2">Hissi</label>
 							<select id="hissi2">
 								<option>Ei</option>
 								<option>Kyllä</option>
