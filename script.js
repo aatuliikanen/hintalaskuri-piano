@@ -63,14 +63,6 @@ let hissi2 = function() {
 	}
 }
 
-// Kokonaishinta
-
-let total = function() {
-	total = Number(pohja) + Number(pianoTyyppi()) + Number(matkalasku()) + Number(kerrosOne())
-	+ Number(kerrosTwo()) + Number(hissi1()) + Number(hissi2());
-	return total;
-}
-
 
 
 
@@ -85,12 +77,30 @@ let newAlert = function(message) {
 	laskuri.insertBefore(newElement, vastaus);
 }
 
+let totalAlert = function() {
+	let total = Number(pohja) + Number(pianoTyyppi()) + Number(matkalasku()) + Number(kerrosOne())
+	+ Number(kerrosTwo()) + Number(hissi1()) + Number(hissi2());
+
+	if(document.querySelector('.newElement') == null) {
+		return newAlert('Kuljetuksen hinta on ' + total + ' euroa.');		
+	} else {
+		return document.querySelector('.newElement').innerHTML = 'Kuljetuksen hinta on ' + total + ' euroa.'
+	}
+
+}
 
 
-let button = document.getElementById("nappi");
-
-button.addEventListener("click", function() {
-	newAlert('Kuljetuksen hinta on ' + total() + ' euroa.' );
-})
 
 
+// addEventListener
+
+// let button = document.getElementById("nappi");
+
+// button.addEventListener("click", function() {
+// 	let total = function() {
+// 	total = Number(pohja) + Number(pianoTyyppi()) + Number(matkalasku()) + Number(kerrosOne())
+// 	+ Number(kerrosTwo()) + Number(hissi1()) + Number(hissi2());
+// 	return total;
+// }
+	
+// })

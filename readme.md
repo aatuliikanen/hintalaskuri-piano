@@ -18,12 +18,3 @@ Hinta:
 + Kerros lopussa 2 tai enemmän: 50€
 + Hissi vähentää kerroksen hintalisäystä alussa ja lopussa: -25€
 
-### Laskuri on kehitysvaiheessa
-Tässä muutamia korjattavia ongelmia:
-- Sivu on päivitettävä, jos haluaa laskea hinnan uudelleen
-- Kun hinta tulee esille, sivun taustakuva heilahtaa.
-- Mobiilissa laskuri on huono käyttää
-- Käytettävyyttä pitää parantaa
-
-
-
