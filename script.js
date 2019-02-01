@@ -82,7 +82,7 @@ let totalAlert = function() {
 	+ Number(kerrosTwo()) + Number(hissi1()) + Number(hissi2());
 
 	if(document.querySelector('.newElement') == null) {
-		return newAlert('Kuljetuksen hinta on ' + total + ' euroa.');		
+		return newAlert('Kuljetuksen hinta on ' + total + ' euroa (sis. alv).');		
 	} else {
 		return document.querySelector('.newElement').innerHTML = 'Kuljetuksen hinta on ' + total + ' euroa.'
 	}

@@ -7,55 +7,71 @@
 	<title>Pianon kuljetus - hintalaskuri</title>
 </head>
 <body>
-	<div id="container">
-		<h1></h1>
-		<div class="laskuri">
-			<h2>Laske pianon kuljetukselle hinta</h2>
-				<form id="laskuri-form">
-					<p>Valitse piano tai flyygeli</p>
-					<p id="pianotyyppi">
-						<input id="piano" type="radio" name="piano" value="piano">
-						<label class="tyyppi piano" for="piano">Piano</label>
-						<input id="flyygeli" type="radio" name="piano" value="flyygeli">
-						<label class="tyyppi flyygeli" for="flyygeli">Flyygeli</label>
-					</p>
-					<p>
-						<label for="matka">Muuttomatka kilometreinä</label>
-						<input type="number" id="matka" min=1 max=2000>
-					</p>
-					<h4>Mistä?</h4>
-					<p>
-						<label for="kerros1">Kerros</label>
-						<input type="number" id="kerros1" value=1 min=1 max=18>				
-					</p>
-					<p>
-						<label for="hissi1">Hissi</label>
-							<select id="hissi1">
-								<option>Ei</option>
-								<option>Kyllä</option>
-							</select>			
-					</p>
-					<h4>Minne?</h4>
-					<p>
-						<label for="kerros2">Kerros</label>
-						<input type="number" id="kerros2" value=1 min=1 max=18>
-					</p>
-					<p>
-						<label for="hissi2">Hissi</label>
-							<select id="hissi2">
-								<option>Ei</option>
-								<option>Kyllä</option>
-							</select>
-					</p>
-					<p>
-						<button type="button" id="nappi" onclick="totalAlert()">Laske hinta</button>
-					</p>
-				</form>
-			<div id="vastaus">
+	<header>
+		<nav>
+			<ul class="nav-main">
+				<li><a href="">Etusivu</a></li>
+				<li><a href="">Hintalaskuri</a></li>
+				<li><a href="">Meistä</a></li>
+				<li><a href="">Yhteystiedot</a></li>
+			</ul>
+		</nav>
+		<div class="cover">
+			<h1>Muutamme pianon puolestasi</h1>
+		</div>
+	</header>
+	<main>
+		<div id="container">
+			<div class="laskuri">
+				<h2>Laske pianon kuljetukselle hinta</h2>
+					<form id="laskuri-form">
+						<p>Valitse piano tai flyygeli</p>
+						<p id="pianotyyppi">
+							<input id="piano" type="radio" name="piano" value="piano">
+							<label class="tyyppi piano" for="piano">Piano</label>
+							<input id="flyygeli" type="radio" name="piano" value="flyygeli">
+							<label class="tyyppi flyygeli" for="flyygeli">Flyygeli</label>
+						</p>
+						<p>
+							<label for="matka">Muuttomatka kilometreinä</label>
+							<input type="number" id="matka" min=1 max=2000>
+						</p>
+						<h4>Mistä?</h4>
+						<p>
+							<label for="kerros1">Kerros</label>
+							<input type="number" id="kerros1" value=1 min=1 max=18>				
+						</p>
+						<p>
+							<label for="hissi1">Hissi</label>
+								<select id="hissi1">
+									<option>Ei</option>
+									<option>Kyllä</option>
+								</select>			
+						</p>
+						<h4>Minne?</h4>
+						<p>
+							<label for="kerros2">Kerros</label>
+							<input type="number" id="kerros2" value=1 min=1 max=18>
+						</p>
+						<p>
+							<label for="hissi2">Hissi</label>
+								<select id="hissi2">
+									<option>Ei</option>
+									<option>Kyllä</option>
+								</select>
+						</p>
+						<p>
+							<button type="button" id="nappi" onclick="totalAlert()">Laske hinta</button>
+						</p>
+					</form>
+				<div id="vastaus">
+				</div>
 			</div>
 		</div>
-	</div>
-
+	</main>
+	<footer>
+		<p>&copy Aatu Liikanen 2019</p>
+	</footer>
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
