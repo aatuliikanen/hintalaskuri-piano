@@ -86,10 +86,7 @@ let totalAlert = function() {
 	} else {
 		return document.querySelector('.newElement').innerHTML = 'Kuljetuksen hinta on ' + total + ' euroa.'
 	}
-
 }
-
-
 
 
 // addEventListener
