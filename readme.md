@@ -6,8 +6,8 @@ Laskurilla kävijä saa laskettua pianon kuljetuksen hinnan. Muuttofirma voi ker
 
 Laskuri on vielä kehitysvaiheessa. Tässä muutamia kehitettäviä asioita:
 
-#### Kun kävijä jättää puhelinnumeron:
-- niin se ja koko lomake lähetetään haluttuun sähköpostiin
+Kun kävijä jättää puhelinnumeron, pitäisi tapahtua seuraavaa:
+- Puhelinnumero ja koko lomake lähetetään haluttuun sähköpostiin
 - Kiitos -viesti näkyy vain yhden kerran
 - Kiitos -viesti tulee vain jos käyttäjä laittaa puhelinnumeronsa lomakkeeseen
 
