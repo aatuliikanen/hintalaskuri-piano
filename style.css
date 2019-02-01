@@ -52,7 +52,9 @@ h1 {
 	padding: 3rem;
 }
 
-
+h2 {
+	font-size: 1.6rem;
+}
 
 /* CALCULATOR */
 
@@ -63,7 +65,7 @@ h1 {
 }
 
 .laskuri {
-	max-width: 600px;
+	max-width: 450px;
 	line-height: 1.6;
 	margin: 1em;
 	font-family: helvetica;
@@ -84,7 +86,7 @@ h4 {
 }
 
 p {
-	font-size: 16px;
+	font-size: 1rem;
 }
 
 select {
@@ -172,10 +174,36 @@ button:focus {
 /*Styling new "alert"*/
 
 .newElement {
-	border-top: 1px lightgrey solid;
-	margin-top: 30px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding: 20px;
+	background-color: #b1f9b3;
+	border-radius: 4px;
+	font-size: 1.2rem;
+	margin: 35px 0;
+}
+
+/* Laskurin jälkeinen lomake */
+.newForm {
+	margin-top: 70px;
+	border-top: solid lightgrey 1px;
+}
+
+h5 {
+	font-size: 1.1rem;
+	margin-bottom: 0;
+}
+
+input[type="tel"] {
+	width: 100%;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding: 6px;
+}
+
+input[type=number] {
+	width: 100%;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding: 6px;
 }
 
 /* FOOTER */
@@ -216,10 +244,6 @@ footer {
 
 	.nav-main li {
 		padding: 10px;
-	}
-
-	.cover {
-		height: 550px;
 	}
 }
 

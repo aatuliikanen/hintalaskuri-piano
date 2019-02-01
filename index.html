@@ -61,10 +61,21 @@
 								</select>
 						</p>
 						<p>
-							<button type="button" id="nappi" onclick="totalAlert()">Laske hinta</button>
+							<button type="button" id="hinta" onclick="totalAlert()">Laske hinta</button>
 						</p>
 					</form>
-				<div id="vastaus">
+				<div class="newForm">
+					<h5>Haluatko tilata kuljetuksen tai lisätietoja palvelustamme?</h5>
+					<p>Jätä puhelinnumero, niin otamme yhteyttä viimeistään seuraavana arkipäivänä.</p>
+					<form id="puhelin">
+						<p>
+							<label for="puhelin">Puhelin</label>
+							<input type="tel" id="puhelin">
+						</p>
+						<p>
+							<button type="button" id="tilaa" onclick="sendAlert()">Lähetä</button>
+					</form>
+					<div class = "thankyou"></div>
 				</div>
 			</div>
 		</div>
