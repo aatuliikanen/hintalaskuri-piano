@@ -217,6 +217,10 @@ footer {
 	.nav-main li {
 		padding: 10px;
 	}
+
+	.cover {
+		height: 550px;
+	}
 }
 
 
