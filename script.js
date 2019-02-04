@@ -1,29 +1,32 @@
-
 // HINNAN LASKEMINEN
 
-// Perusmaksu 100€
-let pohja = 100
+// Perusmaksu
+let perusmaksu = 100
 
-// Pianotyyppi: normaali +0€, flyygeli +250€
-let pianoTyyppi = function () {
+// Pianon tyyppi
+let pianotyyppi = function () {
 	let tyyppi = document.getElementsByName("piano");
 	let hinta = 0;
 	if(tyyppi[1].checked) {
+		// Paljonko lisähintaa flyygelistä
 		hinta = 250;
 	} else {
+		// Paljonko lisähintaa normaalipianosta
 		hinta = 0;
 	}
 	return hinta;
 }
 
-// Matkalasku on matka x 1€
+// Matkalasku
 let matkalasku = function() {
 	a = document.getElementById("matka").value
-	return a;
+	// Paljonko hintaa per kilometri
+	return a * 1;
 }
 
-// Ykköskerros +0€, muut +50€
-let kerrosOne = function() {
+// Kerroksen hintavaikutus
+
+let kerros1 = function() {
 	let k1 = document.getElementById("kerros1").value;
 	if(k1 == 1) {
 		return 0;
@@ -32,7 +35,7 @@ let kerrosOne = function() {
 	}
 }
 
-let kerrosTwo = function() {
+let kerros2 = function() {
 	let k2 = document.getElementById("kerros2").value;
 	if(k2 == 1) {
 		return 0;
@@ -41,10 +44,11 @@ let kerrosTwo = function() {
 	}
 }
 
-// Hissi: jos yli 2 kerrosta, niin kerroksen hintavaikutus miinus 25€
+// Hissin hintavaikutus
 let hissi1 = function() {
 	let h1 = document.getElementById("hissi1").value;
-	if(h1 == "Kyllä" && kerrosOne() > 25) {
+	if(h1 == "Kyllä" && kerros1() > 0) {
+		// Jos 2 kerrosta tai enemmän, niin kerroksen hintavaikutus miinus x€
 		return -25;
 	} else {
 		return 0;
@@ -53,17 +57,17 @@ let hissi1 = function() {
 
 let hissi2 = function() {
 	let h2 = document.getElementById("hissi2").value;
-	if(h2 == "Kyllä" && kerrosTwo() > 25) {
-		return (-25);
+	if(h2 == "Kyllä" && kerros2() > 0) {
+		return -25;
 	} else {
 		return 0;
 	}
 }
 
-// LASKE HINTA-NAPPI
+// LASKE HINTA -NAPPI
 
-let newAlert = function(message) {
-	// Create div-element with .newElement class
+let priceAlert = function(message) {
+	// Luo div-elementin, johon tulee message-teksti
 	let newElement = document.createElement('div');
 	newElement.className = 'newElement';
 	newElement.appendChild(document.createTextNode(message));
@@ -74,32 +78,40 @@ let newAlert = function(message) {
 	laskuri.insertBefore(newElement, newForm);
 }
 
-// Kun nappia painetaan, tämä funktio aktivoituu.
-let totalAlert = function() {
-	let total = Number(pohja) + Number(pianoTyyppi()) + Number(matkalasku()) + Number(kerrosOne())
-	+ Number(kerrosTwo()) + Number(hissi1()) + Number(hissi2());
+// Kun "Laske hinta" -nappia painetaan, niin tämä funktio aktivoituu.
+let price = function() {
+	let total = Number(perusmaksu) + Number(pianotyyppi()) + Number(matkalasku()) + Number(kerros1())
+	+ Number(kerros2()) + Number(hissi1()) + Number(hissi2());
 	let message = 'Kuljetuksen hinta on ' + total + ' euroa (sis. alv).'
 
 	if(document.querySelector('.newElement') == null) {
-		return newAlert(message);		
+		return priceAlert(message);		
 	} else {
-		return document.querySelector('.newElement').innerHTML = message
+		return document.querySelector('.newElement').innerHTML = message;
 	}
 }
 
 // LÄHETÄ -NAPPI
 
-let sendAlert = function() {
+let sendAlert = function(message) {
+	// Luo div-elementin, johon tulee message-teksti
 	let sendElement = document.createElement('div');
 	sendElement.className = 'sendElement';
-	sendElement.appendChild(document.createTextNode('Kiitos! Palataan asiaan.'));
+	sendElement.appendChild(document.createTextNode(message));
 
+	// Määritellään mihin vastausteksti asettuu
 	let newForm = document.querySelector('.newForm');
 	let thankyou = document.querySelector('.thankyou')
 	newForm.insertBefore(sendElement, thankyou);
 }
 
+let send = function() {
+	let message = 'Kiitos! Palataan asiaan.';
 
+	if(document.querySelector('.sendElement') == null) {
+		return sendAlert(message);
+	};
+}
 
 
 

@@ -1,15 +1,8 @@
 # Hintalaskuri muuttofirmalle
 
-Laskurilla kävijä saa laskettua pianon kuljetuksen hinnan. Muuttofirma voi kerätä laskurilla liidejä ja tilauksia.
+Laskurilla kävijä saa laskettua pianon kuljetuksen hinnan. 
 
-## Kehitys
-
-Laskuri on vielä kehitysvaiheessa. Tässä muutamia kehitettäviä asioita:
-
-#### Kun kävijä jättää puhelinnumeron, pitäisi tapahtua seuraavaa:
-- Puhelinnumero ja koko lomake lähetetään haluttuun sähköpostiin
-- Kiitos -viesti näkyy vain yhden kerran
-- Kiitos -viesti tulee vain jos käyttäjä laittaa puhelinnumeronsa lomakkeeseen
+Muuttofirma voi kerätä laskurilla liidejä ja tilauksia. Tällä hetkellä laskuri ei kuitenkaan lähetä lomakkeen tietoja tai puhelinnumeroa minnekään.
 
 ## Miten kuljetuksen hinta on laskettu?
 Hinta:
@@ -19,5 +12,7 @@ Hinta:
 + Kerros alussa 2 tai enemmän: 50€
 + Kerros lopussa 2 tai enemmän: 50€
 + Hissi vähentää kerroksen hintalisäystä alussa ja lopussa: -25€
+
+
 
 

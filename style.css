@@ -70,7 +70,7 @@ h2 {
 	line-height: 1.6;
 	margin: 1em;
 	font-family: helvetica;
-	padding: 1em;
+	padding: 1.5em;
 }
 
 
@@ -172,7 +172,7 @@ button:focus {
 	outline: 0;
 }
 
-/*Styling new "alert"*/
+/*Styling priceAlert*/
 
 .newElement {
 	padding: 20px;
