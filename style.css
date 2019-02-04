@@ -183,7 +183,7 @@ button:focus {
 }
 
 /* Laskurin jälkeinen lomake */
-.newForm {
+.sendForm {
 	margin-top: 70px;
 	border-top: solid lightgrey 1px;
 }

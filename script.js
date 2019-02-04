@@ -74,8 +74,8 @@ let priceAlert = function(message) {
 
 	// Määritellään mihin vastausteksti asettuu
 	let laskuri = document.querySelector('.laskuri');
-	let newForm = document.querySelector('.newForm');
-	laskuri.insertBefore(newElement, newForm);
+	let sendForm = document.querySelector('.sendForm');
+	laskuri.insertBefore(newElement, sendForm);
 }
 
 // Kun "Laske hinta" -nappia painetaan, niin tämä funktio aktivoituu.
@@ -100,16 +100,17 @@ let sendAlert = function(message) {
 	sendElement.appendChild(document.createTextNode(message));
 
 	// Määritellään mihin vastausteksti asettuu
-	let newForm = document.querySelector('.newForm');
+	let sendForm = document.querySelector('.sendForm');
 	let thankyou = document.querySelector('.thankyou')
-	newForm.insertBefore(sendElement, thankyou);
+	sendForm.insertBefore(sendElement, thankyou);
 }
 
 let send = function() {
-	let message = 'Kiitos! Palataan asiaan.';
-
-	if(document.querySelector('.sendElement') == null) {
-		return sendAlert(message);
+	let message = 'Kiitos! Otamme yhteyttä viimeistään seuraavana arkipäivänä.';
+	let sendElement = document.querySelector('.sendElement')
+	
+	if(sendElement == null) {
+		sendAlert(message);
 	};
 }
 
