@@ -175,12 +175,12 @@ button:focus {
 }
 
 .hintateksti {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 }
 
 .new-form {
 	margin-top: 70px;
-	border-top: solid lightgrey 1px;
+	border-top: solid black 1px;
 }
 
 h5 {
