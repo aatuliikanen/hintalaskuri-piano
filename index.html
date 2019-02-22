@@ -23,7 +23,7 @@
 	<main>
 		<div id="container">
 			<div class="laskuri">
-				<h2>Laske pianon kuljetukselle hinta</h2>
+				<h2>Laske pianon kuljetukselle hinta laskurilla</h2>
 					<form id="laskuri-form">
 						<p>Valitse piano tai flyygeli</p>
 						<p id="pianotyyppi">
@@ -33,13 +33,15 @@
 							<label class="tyyppi flyygeli" for="flyygeli">Flyygeli</label>
 						</p>
 						<p>
-							<label for="matka">Muuttomatka kilometreinä</label>
-							<input type="number" id="matka" min=1 max=2000>
+							<label>Muuttomatka kilometreinä
+								<input type="number" name="matka" id="matka">
+							</label>
 						</p>
 						<h4>Mistä?</h4>
 						<p>
-							<label for="kerros1">Kerros</label>
-							<input type="number" id="kerros1" value=1 min=1 max=18>				
+							<label>Kerros
+								<input type="number" id="kerros1" name="kerros2" value="1">	
+							</label>	
 						</p>
 						<p>
 							<label for="hissi1">Hissi</label>
@@ -50,8 +52,9 @@
 						</p>
 						<h4>Minne?</h4>
 						<p>
-							<label for="kerros2">Kerros</label>
-							<input type="number" id="kerros2" value=1 min=1 max=18>
+							<label>Kerros
+								<input type="number" id="kerros2" name="kerros2" value="1">	
+							</label>	
 						</p>
 						<p>
 							<label for="hissi2">Hissi</label>
@@ -61,28 +64,13 @@
 								</select>
 						</p>
 						<p>
-							<button type="button" id="hinta" onclick="price()">Laske hinta</button>
+							<button type="button" id="nappi" onclick="createDiv()">Laske hinta</button>
 						</p>
 					</form>
-				<div class="sendForm">
-					<h5>Haluatko tilata kuljetuksen pianolle? Vai haluatko lisätietoja?</h5>
-					<p>Jätä puhelinnumero, niin otamme yhteyttä.</p>
-					<form id="puhelin">
-						<p>
-							<label for="phone">Puhelin</label>
-							<input type="tel" id="phone">
-						</p>
-						<p>
-							<button type="button" id="tilaa" onclick="send()">Lähetä</button>
-					</form>
-					<div class = "thankyou"></div>
-				</div>
+					<div id="new-div"></div>
 			</div>
 		</div>
 	</main>
-	<footer>
-		<p>&copy Aatu Liikanen 2019</p>
-	</footer>
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

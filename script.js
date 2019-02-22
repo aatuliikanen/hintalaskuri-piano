@@ -4,114 +4,105 @@
 let perusmaksu = 100
 
 // Pianon tyyppi
-let pianotyyppi = function () {
-	let tyyppi = document.getElementsByName("piano");
-	let hinta = 0;
-	if(tyyppi[1].checked) {
-		// Paljonko lisähintaa flyygelistä
-		hinta = 250;
+function hintaPianotyyppi() {
+	let tyyppi = document.querySelector('input[name="piano"]:checked').value;
+
+	if(tyyppi == 'piano') {
+		return 0;
 	} else {
-		// Paljonko lisähintaa normaalipianosta
-		hinta = 0;
+		// Paljonko lisähintaa flyygelistä
+		return 250
 	}
-	return hinta;
 }
 
 // Matkalasku
-let matkalasku = function() {
-	a = document.getElementById("matka").value
+function hintaMatka() {
+	let matka = document.getElementById("matka").value
 	// Paljonko hintaa per kilometri
-	return a * 1;
+	return matka * 1;
 }
 
 // Kerroksen hintavaikutus
-
-let kerros1 = function() {
-	let k1 = document.getElementById("kerros1").value;
-	if(k1 == 1) {
+function hintaKerros1() {
+	let kerros1 = document.getElementById("kerros1").value;
+	if(kerros1 == 1) {
 		return 0;
+	} else if(kerros1 == 2) {
+		return 30;
 	} else {
 		return 50;
 	}
 }
 
-let kerros2 = function() {
-	let k2 = document.getElementById("kerros2").value;
-	if(k2 == 1) {
+function hintaKerros2() {
+	let kerros2 = document.getElementById("kerros2").value;
+	if(kerros2 == 1) {
 		return 0;
+	} else if(kerros2 == 2) {
+		return 30;
 	} else {
 		return 50;
 	}
 }
 
 // Hissin hintavaikutus
-let hissi1 = function() {
-	let h1 = document.getElementById("hissi1").value;
-	if(h1 == "Kyllä" && kerros1() > 0) {
-		// Jos 2 kerrosta tai enemmän, niin kerroksen hintavaikutus miinus x€
-		return -25;
+function hintaHissi1() {
+	let hissi1 = document.getElementById("hissi1").value;
+	let kerros1 = document.getElementById("kerros1").value;
+
+	if(hissi1 == "Kyllä" && kerros1 > 1) {
+		return 50;
+	} else if(hissi1 == "Ei" && kerros1 > 1) {
+		return 100;
 	} else {
-		return 0;
+		return 0
 	}
 }
 
-let hissi2 = function() {
-	let h2 = document.getElementById("hissi2").value;
-	if(h2 == "Kyllä" && kerros2() > 0) {
-		return -25;
+function hintaHissi2() {
+	let hissi2 = document.getElementById("hissi2").value;
+	let kerros2 = document.getElementById("kerros2").value;
+
+	if(hissi2 == "Kyllä" && kerros2 > 1) {
+		return 50;
+	} else if(hissi2 == "Ei" && kerros2 > 1) {
+		return 100;
 	} else {
-		return 0;
+		return 0
 	}
 }
 
-// LASKE HINTA -NAPPI
+// VASTAUSTEKSTI
 
-let priceAlert = function(message) {
-	// Luo div-elementin, johon tulee message-teksti
-	let newElement = document.createElement('div');
-	newElement.className = 'newElement';
-	newElement.appendChild(document.createTextNode(message));
+function getPrice() {
+	let total = Number(perusmaksu) + Number(hintaPianotyyppi()) + Number(hintaMatka()) + Number(hintaKerros1())
+	+ Number(hintaKerros2()) + Number(hintaHissi1()) + Number(hintaHissi2());
 
-	// Määritellään mihin vastausteksti asettuu
-	let laskuri = document.querySelector('.laskuri');
-	let sendForm = document.querySelector('.sendForm');
-	laskuri.insertBefore(newElement, sendForm);
+	return total;
 }
 
-// Kun "Laske hinta" -nappia painetaan, niin tämä funktio aktivoituu.
-let price = function() {
-	let total = Number(perusmaksu) + Number(pianotyyppi()) + Number(matkalasku()) + Number(kerros1())
-	+ Number(kerros2()) + Number(hissi1()) + Number(hissi2());
-	let message = 'Kuljetuksen hinta on ' + total + ' euroa (sis. alv).'
+function createDiv() {
+	let newDiv = document.getElementById('new-div');
 
-	if(document.querySelector('.newElement') == null) {
-		return priceAlert(message);		
-	} else {
-		return document.querySelector('.newElement').innerHTML = message;
-	}
-}
-
-// LÄHETÄ -NAPPI
-
-let sendAlert = function(message) {
-	// Luo div-elementin, johon tulee message-teksti
-	let sendElement = document.createElement('div');
-	sendElement.className = 'sendElement';
-	sendElement.appendChild(document.createTextNode(message));
-
-	// Määritellään mihin vastausteksti asettuu
-	let sendForm = document.querySelector('.sendForm');
-	let thankyou = document.querySelector('.thankyou')
-	sendForm.insertBefore(sendElement, thankyou);
-}
-
-let send = function() {
-	let message = 'Kiitos! Otamme yhteyttä viimeistään seuraavana arkipäivänä.';
-	let sendElement = document.querySelector('.sendElement')
-	
-	if(sendElement == null) {
-		sendAlert(message);
-	};
+	newDiv.innerHTML= `
+					<p class="hintateksti">Kuljetuksen hinta on ${getPrice()} euroa. Hinta sisältää arvonlisäveron</p>
+					<div class="new-form">
+						<h5>Haluatko tilata kuljetuksen pianolle?</h5>
+						<p>Jätä puhelinnumero, niin otamme yhteyttä.</p>
+						<form id="puhelin">
+							<p>
+								<label for="phone">Puhelin</label>
+								<input type="tel" id="phone">
+							</p>
+							<p>
+								<button type="button" id="tilaa" onclick="send()">Lähetä</button>
+							</p>
+						</form>
+					</div>
+					<div class="thankyou"></div>
+		`
+		
+		newDiv.style.padding = "20px";
 }
 
 
