@@ -7,70 +7,72 @@
 	<title>Pianon kuljetus - hintalaskuri</title>
 </head>
 <body>
-	<header>
-		<nav>
-			<ul class="nav-main">
-				<li><a href="">Etusivu</a></li>
-				<li><a href="">Hintalaskuri</a></li>
-				<li><a href="">Meistä</a></li>
-				<li><a href="">Yhteystiedot</a></li>
-			</ul>
-		</nav>
-		<div class="cover">
-			<h1>Muutamme pianon puolestasi</h1>
+<main>
+	<div class="laskuri">
+		<div class="laskuri-box">
+			<h2>Laske pianon muutolle hinta</h2>
+			<p class="intro">Muutamme pianoja 90 kilometrin etäisyydellä Jyväskylästä. Syötä tiedot laskuriin, niin se laskee sinulle hinnan.</p>
+			<form>
+				<p class="label">Pianon tyyppi</p>
+				<p class="radio">
+					<input id="piano" type="radio" name="pianotyyppi" value="piano">
+					<label class="radio-img piano" for="piano"></label>
+					<input id="flyygeli" type="radio" name="pianotyyppi" value="flyygeli">
+					<label class="radio-img flyygeli" for="flyygeli"></label>
+				</p>
+				<div class="box-start">
+					<h4>Lähtö</h4>
+					<p>
+						<label>Etäisyys Jyväskylästä
+							<select name="distance-1" id="distance-1">
+								<option value="alle-30">Alle 30km</option>
+								<option value="alle-60">Alle 60km</option>
+								<option value="alle-90">Alle 90km</option>
+							</select>
+						</label>
+					</p>
+					<p>
+						<label>Muutetaanko portaita pitkin?
+							<select name="portaat-1" id="portaat-1">
+								<option value="ei">Ei (1. kerros tai piano mahtuu hissiin)</option>
+								<option value="1-2">Kyllä, enintään 2 kerrosta</option>
+								<option value="3-4">Kyllä, enintään 4 kerrosta</option>
+								<option value="yli-5">Kyllä, 5 kerrosta tai enemmän</option>
+							</select>
+						</label>			
+					</p>
+				</div>
+				<div class="box-end">
+					<h4>Maali</h4>
+					<p>
+						<label>Etäisyys Jyväskylästä
+							<select name="distance-2" id="distance-2">
+								<option value="alle-30">Alle 30km</option>
+								<option value="alle-60">Alle 60km</option>
+								<option value="alle-90">Alle 90km</option>
+							</select>
+						</label>
+					</p>
+					<p>
+						<label>Muutetaanko portaita pitkin?
+							<select name="portaat-2" id="portaat-2">
+								<option value="ei">Ei (1. kerros tai piano mahtuu hissiin)</option>
+								<option value="1-2">Kyllä, enintään 2 kerrosta</option>
+								<option value="3-4">Kyllä, enintään 4 kerrosta</option>
+								<option value="yli-5">Kyllä, 5 kerrosta tai enemmän</option>
+							</select>
+						</label>			
+					</p>
+				</div>
+				<p>
+					<button type="button" onclick="createDiv()">Laske hinta</button>
+				</p>
+				<div id="new-div"></div>
+			</form>		
 		</div>
-	</header>
-	<main>
-		<div id="container">
-			<div class="laskuri">
-				<h2>Laske pianon kuljetukselle hinta laskurilla</h2>
-					<form id="laskuri-form">
-						<p>Valitse piano tai flyygeli</p>
-						<p id="pianotyyppi">
-							<input id="piano" type="radio" name="piano" value="piano">
-							<label class="tyyppi piano" for="piano">Piano</label>
-							<input id="flyygeli" type="radio" name="piano" value="flyygeli">
-							<label class="tyyppi flyygeli" for="flyygeli">Flyygeli</label>
-						</p>
-						<p>
-							<label>Muuttomatka kilometreinä
-								<input type="number" name="matka" id="matka">
-							</label>
-						</p>
-						<h4>Mistä?</h4>
-						<p>
-							<label>Kerros
-								<input type="number" id="kerros1" name="kerros2" value="1">	
-							</label>	
-						</p>
-						<p>
-							<label for="hissi1">Hissi</label>
-								<select id="hissi1">
-									<option>Kyllä</option>
-									<option>Ei</option>
-								</select>			
-						</p>
-						<h4>Minne?</h4>
-						<p>
-							<label>Kerros
-								<input type="number" id="kerros2" name="kerros2" value="1">	
-							</label>	
-						</p>
-						<p>
-							<label for="hissi2">Hissi</label>
-								<select id="hissi2">
-									<option>Kyllä</option>
-									<option>Ei</option>
-								</select>
-						</p>
-						<p>
-							<button type="button" id="nappi" onclick="createDiv()">Laske hinta</button>
-						</p>
-					</form>
-					<div id="new-div"></div>
-			</div>
-		</div>
-	</main>
-	<script type="text/javascript" src="script.js"></script>
+	</div>
+</main>
+
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

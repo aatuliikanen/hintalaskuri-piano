@@ -1,107 +1,81 @@
 body {
 	margin: 0;
-}
-
-/* NAV */
-
-nav {
-	background-color: #81c784;
-}
-
-.nav-main {
-	display: flex;
-	justify-content: flex-end;
-	list-style: none;
-	font-size: 1rem;
-	text-transform: uppercase;
-	margin: 0;
-	margin-right: 1rem;
-}
-
-.nav-main li {
-	padding: 20px;
-	letter-spacing: 0.5px;
-}
-
-.nav-main a {
-	text-decoration: none;
-	color: #000000;
-}
-
-
-
-/* COVER */
-.cover {
-	height: 90vh;
-	width: 100%;
-	margin: 0;
-	background-image: url('img/background.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-h1 {
-	text-align: center;
-	color: white;
-	text-transform: uppercase;
-	font-size: 3rem;
-	padding: 3rem;
-	letter-spacing: 3px;
-}
-
-/* CALCULATOR */
-
-#container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.laskuri {
-	max-width: 450px;
-	line-height: 1.6;
-	margin: 1em;
 	font-family: helvetica;
-	padding: 1.5em;
 }
-
 
 h2 {
 	font-size: 1.6rem;
-	margin-bottom: 25px;
-	margin-top: 0;
+	text-transform: uppercase;
+	color: #519657;
+}
+
+.intro {
+	margin-bottom: 2.5rem;
 }
 
 h4 {
-	border-top: 1px solid lightgrey;
 	padding-top: 7px;
 	text-transform: uppercase;
-	margin-bottom: 0;
 }
 
 p {
 	font-size: 1rem;
 }
 
-select {
-	width: 100%;
-	font-size: 1rem;
-	border: none;
-	background-color: #f1f1f1;
+.laskuri {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-input[type=number] {
+.laskuri-box {
+	border: 1px solid lightgrey;
+	padding: 1.5rem;
+	margin: 1rem;
+	max-width: 450px;
+	line-height: 1.6rem;
+	margin: 1em;
+	margin-bottom: 100px;
+}
+
+.box-start {
+	padding-bottom: 20px;
+	border-top: 1px solid lightgrey;
+}
+
+.box-end {
+	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
+}
+
+input[type="number"], input[type="tel"], input[type="text"], input[type="email"] {
 	width: 100%;
 	font-size: 1rem;
 	box-sizing: border-box;
 	padding: 6px;
 }
 
-/* Pianotyyppi */
+select {
+	width: 100%;
+	font-size: 1rem;
+	border: none;
+}
+
+textarea {
+	width: 100%;
+	font-size: 1rem;
+}
+
+/* RADIO BUTTONS */
+
+.radio {
+	display: flex;
+	justify-content: space-around;
+}
+
+.radio input {
+	display: none;
+}
 
 .piano {
 	background-image: url(img/piano.jpg);
@@ -111,20 +85,11 @@ input[type=number] {
 	background-image: url(img/grand-piano.jpg);
 }
 
-#pianotyyppi {
-	display: flex;
-	justify-content: space-around;
-}
-
-#pianotyyppi input {
-	display: none;
-}
-
-#pianotyyppi input:checked + .tyyppi {
+.radio input:checked + .radio-img {
 	filter: none;
 }
 
-.tyyppi {
+.radio-img {
 	box-shadow: 0px 4px 8px grey;
 	border-radius: 3px;
 	margin-bottom: 20px;
@@ -137,11 +102,11 @@ input[type=number] {
 	filter: brightness(1.8) grayscale(1) opacity(.7);
 }
 
-.tyyppi:hover {
+.radio-img:hover {
 	filter: brightness(1.2) grayscale(0.5) opacity(.9);
 }
 
-/*Button*/
+/* Button */
 
 button {
 	background-color: #519657;
@@ -170,36 +135,11 @@ button:focus {
 	padding: 0px;
 	background-color: #b1f9b3;
 	border-radius: 4px;
-	font-size: 1.1rem;
-	margin: 35px 0;
-}
-
-.hintateksti {
-	font-size: 1.1rem;
-}
-
-.new-form {
-	margin-top: 70px;
-	border-top: solid black 1px;
 }
 
 h5 {
 	font-size: 1.1rem;
 	margin-bottom: 0;
-}
-
-input[type="tel"] {
-	width: 100%;
-	font-size: 1rem;
-	box-sizing: border-box;
-	padding: 6px;
-}
-
-input[type=number] {
-	width: 100%;
-	font-size: 1rem;
-	box-sizing: border-box;
-	padding: 6px;
 }
 
 /* FOOTER */
